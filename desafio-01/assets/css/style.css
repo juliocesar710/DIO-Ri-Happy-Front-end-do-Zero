@@ -1,0 +1,244 @@
+@import url('./reset.css');
+
+body {
+    background-color: #120907;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #9ba5e9;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #9ba5e9;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+p {
+    color: #d6e3ed;
+}
+
+section {
+    margin: 100px auto;
+    padding: 0 20px;
+}
+
+.banner {
+    background-image: linear-gradient(#12090706, #5a5f8c, #12090706), url('../images/banner.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    padding-top: 60px;
+    border-bottom: 1px solid #5a5f8c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner .banner-content {
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: transparent;
+    background: linear-gradient(90deg, #d6e3ed, #9ba5e9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: gradientText 5s infinite alternate;
+}
+
+.banner p {
+    font-size: 1.25rem;
+    margin: 16px 0 24px;
+    font-weight: 400;
+}
+
+.banner .logo {
+    background-color: rgba(0, 0, 0, .2);
+    height: 260px;
+    width: 260px;
+    margin: auto;
+    border-radius: 50%;
+    padding: 16px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.banner .logo:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.banner .logo img {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.banner .banner-content button {
+    color: #9ba5e9;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 16px 32px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: transparent;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #9ba5e9, #1572B7);
+    border-image-slice: 1;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.banner .banner-content button:hover {
+    background: linear-gradient(45deg, #9ba5e9, #1572B7);
+    color: #120907;
+}
+
+#course-content {
+    max-width: 800px;
+    text-align: center;
+    margin: auto;
+}
+
+#course-content .modules-list {
+    margin: 24px 0;
+}
+
+#course-content .modules-list .module {
+    color: white;
+    width: 100%;
+    max-width: 530px;
+    margin: 0 auto 24px;
+    border: 1px solid #9ba5e9;
+    background-color: #252525;
+    padding: 16px;
+    border-radius: 100px;
+    box-shadow: inset -5px 6px 8px rgba(0, 0, 0, .7);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#course-content .modules-list .module:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(155, 165, 233, 0.5);
+}
+
+#course-content .modules-list .module span {
+    color: #9ba5e9;
+}
+
+#transform-world {
+    height: 560px;
+    background-size: cover;
+    background-image: url("../images/woman-code.png");
+    background-attachment: fixed;
+    border-top: 1px solid #33A8DB80;
+    border-bottom: 1px solid #33A8DB80;
+    padding: 200px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#transform-world p {
+    font-weight: 900;
+    font-size: 2.5rem;
+    text-transform: lowercase;
+    max-width: 250px;
+    text-shadow: 3px 2px #33A8DB;
+}
+
+#professional-challenges {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+#professional-challenges img {
+    margin: 32px 0;
+    max-width: 100%;
+}
+
+footer {
+    padding: 60px 0;
+    text-align: center;
+    background-image: linear-gradient(rgba(50, 168, 219, .0), rgba(50, 168, 219, .2));
+    border-top: 1px solid #33A8DB80;
+}
+
+footer .dio-logo {
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+footer .dio-logo:hover {
+    transform: scale(1.1);
+}
+
+footer a {
+    color: #33A8DB;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #9ba5e9;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientText {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .banner, #transform-world {
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .banner .banner-content, #course-content, #professional-challenges {
+        width: 100%;
+    }
+
+    #course-content .modules-list .module {
+        width: 90%;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    #transform-world p {
+        font-size: 1.8rem;
+    }
+}
